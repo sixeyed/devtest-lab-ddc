@@ -3,7 +3,7 @@
 UCP_VERSION=${1:-2.0.1}
 USER_NAME=${2:-ddcadmin}
 PASSWORD=${3:-ddcX200!6}
-AZURE_DOMAIN=${4:-northeurope.cloudapp.azure.com}
+AZURE_REGION=${4:-northeurope}
 
 IP_ADDRESS=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 
@@ -13,4 +13,4 @@ sudo docker run --rm -it --name ucp \
  --host-address $IP_ADDRESS \
  --admin-username $USER_NAME \
  --admin-password $PASSWORD \
- --san $HOSTNAME.$AZURE_DOMAIN 
+ --san $HOSTNAME.$AZURE_REGION.cloudapp.azure.com
