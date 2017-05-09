@@ -1,4 +1,4 @@
-$tag = '10.0.14393.1066'
+$tag = '10.0.14393.1198'
 
 docker pull "microsoft/windowsservercore:$tag"
 docker pull "microsoft/nanoserver:$tag"
